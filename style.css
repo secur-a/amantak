@@ -1,0 +1,426 @@
+/* ملف الأنماط الرئيسي لمدونة الأمن السيبراني */
+
+/* إعادة تعيين الأنماط الافتراضية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* متغيرات الألوان والخطوط */
+:root {
+    --primary-color: #0a192f;      /* أزرق داكن للخلفية الرئيسية */
+    --secondary-color: #112240;    /* أزرق داكن للعناصر الثانوية */
+    --accent-color: #64ffda;       /* أخضر فاتح للتأكيد والأزرار */
+    --text-primary: #e6f1ff;       /* أبيض مائل للأزرق للنصوص الرئيسية */
+    --text-secondary: #8892b0;     /* رمادي فاتح للنصوص الثانوية */
+    --danger-color: #ff5555;       /* أحمر للتحذيرات */
+    --warning-color: #f1fa8c;      /* أصفر للتنبيهات */
+    --success-color: #50fa7b;      /* أخضر للنجاح */
+    
+    --font-main: 'Cairo', 'Tajawal', sans-serif;
+    --font-heading: 'Cairo', 'Tajawal', sans-serif;
+    --font-code: 'Courier New', monospace;
+}
+
+/* الخط والألوان الأساسية */
+body {
+    font-family: var(--font-main);
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    direction: rtl;
+}
+
+/* الحاوية الرئيسية */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* الرأس */
+header {
+    background-color: var(--secondary-color);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--text-primary);
+}
+
+/* قائمة التنقل */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: .9rem;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+/* البطاقة الرئيسية */
+.hero {
+    padding: 80px 0;
+    text-align: center;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.hero p {
+    font-size: .9rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: var(--text-secondary);
+}
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--accent-color);
+    padding: 12px 30px;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-3px);
+}
+
+/* قسم المقالات */
+.articles {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--text-primary);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.article-card {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.article-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 20px;
+}
+
+.article-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.article-content p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-secondary);
+    font-size: 0.6rem;
+}
+
+.read-more {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--success-color);
+}
+
+/* صفحة المقال الكاملة */
+.article-full {
+    padding: 40px 0;
+}
+
+.article-header {
+    margin-bottom: 30px;
+}
+
+.article-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.article-meta-full {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.article-content-full {
+    line-height: 1.8;
+}
+
+.article-content-full p {
+    margin-bottom: 20px;
+}
+
+.article-content-full h2 {
+    font-size: 1.7rem;
+    margin: 40px 0 20px;
+    color: var(--accent-color);
+}
+
+.article-content-full h3 {
+    font-size: 1.2rem;
+    margin: 30px 0 15px;
+    color: var(--text-primary);
+}
+
+.article-content-full ul, .article-content-full ol {
+    margin: 20px 0;
+    padding-right: 20px;
+}
+
+.article-content-full li {
+    margin-bottom: 10px;
+}
+
+.article-content-full blockquote {
+    border-right: 4px solid var(--accent-color);
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: rgba(100, 255, 218, 0.05);
+}
+
+.article-content-full code {
+    font-family: var(--font-code);
+    background-color: var(--secondary-color);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.article-content-full pre {
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.article-content-full pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+.warning-box {
+    background-color: rgba(241, 250, 140, 0.1);
+    border-right: 4px solid var(--warning-color);
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.danger-box {
+    background-color: rgba(255, 85, 85, 0.1);
+    border-right: 4px solid var(--danger-color);
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.success-box {
+    background-color: rgba(80, 250, 123, 0.1);
+    border-right: 4px solid var(--success-color);
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+/* التذييل */
+footer {
+    background-color: var(--secondary-color);
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.footer-section p {
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(230, 241, 255, 0.1);
+    margin-top: 30px;
+    color: var(--text-secondary);
+}
+
+/* تصميم متجاوب */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 5px 10px;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.7rem;
+    }
+    
+    .article-header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+    
+    .hero p {
+        font-size: .7rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .article-header h1 {
+        font-size: 1.5rem;
+    }
+}
