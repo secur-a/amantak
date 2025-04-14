@@ -102,7 +102,7 @@ nav ul li a:hover {
     background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
 }
 
-.hero h1 {
+.hero .container h1 {
     font-size: 3rem;
     margin-bottom: 20px;
     color: var(--text-primary);
@@ -115,11 +115,11 @@ nav ul li a:hover {
     color: var(--text-secondary);
 }
 
-.btn {
+.hero .container .btn {
     display: inline-block;
     background-color: transparent;
     color: var(--accent-color);
-    padding: 12px 30px;
+    padding: 10px 15px;
     border: 2px solid var(--accent-color);
     border-radius: 5px;
     text-decoration: none;
@@ -137,8 +137,8 @@ nav ul li a:hover {
     padding: 60px 0;
 }
 
-.section-title {
-    font-size: 2.2rem;
+.articles .container .section-title {
+    font-size: 1.4rem;
     margin-bottom: 40px;
     text-align: center;
     color: var(--text-primary);
@@ -186,7 +186,7 @@ nav ul li a:hover {
 }
 
 .article-content h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 10px;
     color: var(--text-primary);
 }
@@ -194,6 +194,7 @@ nav ul li a:hover {
 .article-content p {
     color: var(--text-secondary);
     margin-bottom: 15px;
+    font-size: .8rem;
 }
 
 .article-meta {
@@ -241,16 +242,17 @@ nav ul li a:hover {
 
 .article-content-full p {
     margin-bottom: 20px;
+    font-size: .8rem;
 }
 
 .article-content-full h2 {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     margin: 40px 0 20px;
     color: var(--accent-color);
 }
 
 .article-content-full h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 30px 0 15px;
     color: var(--text-primary);
 }
@@ -335,7 +337,7 @@ footer {
 }
 
 .footer-section h3 {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     margin-bottom: 20px;
     color: var(--accent-color);
 }
@@ -343,6 +345,7 @@ footer {
 .footer-section p {
     color: var(--text-secondary);
     margin-bottom: 10px;
+    font-size: .8rem;
 }
 
 .footer-section ul {
@@ -369,6 +372,7 @@ footer {
     border-top: 1px solid rgba(230, 241, 255, 0.1);
     margin-top: 30px;
     color: var(--text-secondary);
+    font-size: .9rem;
 }
 
 /* تصميم متجاوب */
