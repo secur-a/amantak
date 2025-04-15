@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: *.png
+Disallow: *.jpg
+
+User-agent: Googlebot
+Disallow:
+Sitemap: https://secur-a.github.io/amantak/sitemap.xml
